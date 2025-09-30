@@ -1,9 +1,12 @@
 const myLibrary = [];
 
-let table = document.getElementById("table");
+const table = document.getElementById("table");
+const openBtn = document.getElementById("open-btn");
+const closeBtn = document.getElementById("close-btn");
+const modal = document.getElementById("modal");
 
 function Book(title, author, date, genre, length) {
-    this.id = crypto.randomUUID;
+    this.id = crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.date = date;
@@ -15,7 +18,7 @@ function addBook(title, author, date, genre, length) {
     let newBook = new Book(title, author, date, genre, length);
     myLibrary.push(newBook);
 
-    let row = table.insertRow;
+    let row = table.insertRow();
 
     let titleCell = row.insertCell(0);
     let authorCell = row.insertCell(1);
@@ -30,9 +33,10 @@ function addBook(title, author, date, genre, length) {
     lengthCell.textContent = newBook.length;
 }
 
-// // Update HTML table to show all current items
-// function updateTable() {
-//     for (let item of myLibrary) {
-        
-//     }
-// }
+openBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});

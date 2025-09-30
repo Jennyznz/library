@@ -1,14 +1,18 @@
-.modal {
+#modal {
     display: none;
     background: rgb(0,0,0,0.5);
     z-index: 10;
 
+    height: 100%;
+    width: 100%;
+    
     justify-content: center;
     align-items: center;
+    position: fixed;
 }
 
-.modal-content {
-    background-color: white;
+#modal-content {
+    background: red;
     width: 300px;
     height: 400px;
     position: relative;

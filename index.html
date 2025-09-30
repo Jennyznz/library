@@ -8,7 +8,22 @@
 </head>
 <body>
 
-    <button type="button" class="modal-button">Add New Book</button>
+    <button type="button" id="open-btn">Add New Book</button>
+
+    <div id="modal">
+        <div id="model-content">
+            <button type="button" id="close-btn">Close</button>
+            <h2>Add a Book</h2>
+            <form action="submit" id="add-book-form">
+                <input type="text" class="title">
+                <input type="text" class="author">
+                <input type="text" class="date">
+                <input type="text" class="genre">
+                <input type="text" class="length">
+                <button type="submit" class="submit">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <table id="table">
         <caption>Your Library Database</caption>
