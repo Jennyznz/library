@@ -5,7 +5,7 @@
 
     height: 100%;
     width: 100%;
-    
+
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -16,4 +16,8 @@
     width: 300px;
     height: 400px;
     position: relative;
+}
+
+#add-book-form {
+    display: grid;
 }

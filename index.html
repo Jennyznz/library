@@ -12,14 +12,30 @@
 
     <div id="modal">
         <div id="model-content">
-            <button type="button" id="close-btn">Close</button>
+            <button type="button" id="close-btn">X</button>
             <h2>Add a Book</h2>
             <form action="submit" id="add-book-form">
-                <input type="text" class="title">
-                <input type="text" class="author">
-                <input type="text" class="date">
-                <input type="text" class="genre">
-                <input type="text" class="length">
+                <div>
+                    <label for="title">Title</label> <br>
+                    <input type="text" id="title">
+                </div>
+                <div>
+                    <label for="author">Author</label> <br>
+                    <input type="text" id="author">
+                </div>
+                <div>
+                    <label for="date">Date of Publication</label> <br>
+                    <input type="text" id="date">
+                </div>
+                <div>
+                    <label for="genre">Genre</label> <br>
+                    <input type="text" id="genre">
+                </div>
+                <div>
+                    <label for="length">Length</label> <br>
+                    <input type="text" id="length"> 
+                </div>
+                <br>
                 <button type="submit" class="submit">Submit</button>
             </form>
         </div>
