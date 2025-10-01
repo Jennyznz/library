@@ -14,29 +14,29 @@
         <div id="model-content">
             <button type="button" id="close-btn">X</button>
             <h2>Add a Book</h2>
-            <form action="submit" id="add-book-form">
+            <form action="submit" id="form">
                 <div>
                     <label for="title">Title</label> <br>
-                    <input type="text" id="title">
+                    <input type="text" id="title" name="title">
                 </div>
                 <div>
                     <label for="author">Author</label> <br>
-                    <input type="text" id="author">
+                    <input type="text" id="author" name="author">
                 </div>
                 <div>
                     <label for="date">Date of Publication</label> <br>
-                    <input type="text" id="date">
+                    <input type="date" id="date" name="date">
                 </div>
                 <div>
                     <label for="genre">Genre</label> <br>
-                    <input type="text" id="genre">
+                    <input type="text" id="genre" name="genre">
                 </div>
                 <div>
                     <label for="length">Length</label> <br>
-                    <input type="text" id="length"> 
+                    <input type="number" id="length" name="length"> 
                 </div>
                 <br>
-                <button type="submit" class="submit">Submit</button>
+                <button type="submit" id="submit-btn">Submit</button>
             </form>
         </div>
     </div>

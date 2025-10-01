@@ -4,6 +4,8 @@ const table = document.getElementById("table");
 const openBtn = document.getElementById("open-btn");
 const closeBtn = document.getElementById("close-btn");
 const modal = document.getElementById("modal");
+const form = document.getElementById("form");
+const submitBtn = document.getElementById("submit-btn");
 
 function Book(title, author, date, genre, length) {
     this.id = crypto.randomUUID();
@@ -39,4 +41,17 @@ openBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
+});
+
+submitBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    addBook(form.title.value, form.author.value, form.date.value, form.genre.value, form.length.value);
+
+    // clear form
+    form.reset();
 });
