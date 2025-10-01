@@ -16,6 +16,12 @@ function Book(title, author, date, genre, length) {
     this.length = length;
 }
 
+function Content() {
+    this.read = false;
+}
+
+Object.setPrototypeOf(Book.prototype, Content.prototype);
+
 function addBook(title, author, date, genre, length) {
     let newBook = new Book(title, author, date, genre, length);
     myLibrary.push(newBook);
@@ -55,8 +61,17 @@ function updatePage() {
         let readStatus = row.insertCell(5);
         const readCheck = document.createElement("input");
         readCheck.type = "checkbox";
+        readCheck.dataset.id = book.id;
 
         readStatus.appendChild(readCheck);
+
+        readCheck.addEventListener("change", () => {
+            for (const b of myLibrary) {
+                if (b.id === readCheck.dataset.id) {
+                   b.read = !b.read;
+                }
+            }
+        });
 
         // Delete option
         let rmOpt = row.insertCell(6);
