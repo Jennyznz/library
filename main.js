@@ -31,19 +31,35 @@ function updatePage() {
         <th>Date of Publication</th>
         <th>Genre</th>
         <th>Length</th>
+        <th>Read?</th>
         <th>Edit</th>            
     </tr>`
 
     for (const book of myLibrary) {
         let row = table.insertRow();
 
+        // Info from form input
         let titleCell = row.insertCell(0);
         let authorCell = row.insertCell(1);
         let dateCell = row.insertCell(2);
         let genreCell = row.insertCell(3);
         let lengthCell = row.insertCell(4);
 
-        let rmOpt = row.insertCell(5);
+        titleCell.textContent = book.title;
+        authorCell.textContent = book.author;
+        dateCell.textContent = book.date;
+        genreCell.textContent = book.genre;
+        lengthCell.textContent = book.length;
+
+        // Read status feature
+        let readStatus = row.insertCell(5);
+        const readCheck = document.createElement("input");
+        readCheck.type = "checkbox";
+
+        readStatus.appendChild(readCheck);
+
+        // Delete option
+        let rmOpt = row.insertCell(6);
 
         const rmBtn = document.createElement("button");
         rmBtn.type = "button";
@@ -56,12 +72,6 @@ function updatePage() {
             myLibrary = myLibrary.filter(x => x.id !== rmBtn.dataset.id);
             updatePage();
         });
-
-        titleCell.textContent = book.title;
-        authorCell.textContent = book.author;
-        dateCell.textContent = book.date;
-        genreCell.textContent = book.genre;
-        lengthCell.textContent = book.length;
     }
 }
 
