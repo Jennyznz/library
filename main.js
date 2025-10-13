@@ -7,20 +7,17 @@ const modal = document.getElementById("modal");
 const form = document.getElementById("form");
 const submitBtn = document.getElementById("submit-btn");
 
-function Book(title, author, date, genre, length) {
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.date = date;
-    this.genre = genre;
-    this.length = length;
+class Book {
+    constructor(title, author, date, genre, length) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.date = date;
+        this.genre = genre;
+        this.length = length;
+        this.read = false;
+    }
 }
-
-function Content() {
-    this.read = false;
-}
-
-Object.setPrototypeOf(Book.prototype, Content.prototype);
 
 function addBook(title, author, date, genre, length) {
     let newBook = new Book(title, author, date, genre, length);
