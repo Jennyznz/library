@@ -97,12 +97,15 @@ closeBtn.addEventListener("click", () => {
 
 submitBtn.addEventListener("click", () => {
     const title = document.getElementById('title');
+    const length = document.getElementById('length');
+    
     if (title.validity.valueMissing) {
         title.setCustomValidity('Enter a Title!');
+    } else if (length.validity.valueMissing) {
+        length.setCustomValidity('Enter a Length!');
     } else {
         modal.style.display = "none";
     }
-    
 });
 
 form.addEventListener("submit", (e) => {
