@@ -96,7 +96,13 @@ closeBtn.addEventListener("click", () => {
 });
 
 submitBtn.addEventListener("click", () => {
-    modal.style.display = "none";
+    const title = document.getElementById('title');
+    if (title.validity.valueMissing) {
+        title.setCustomValidity('Enter a Title!');
+    } else {
+        modal.style.display = "none";
+    }
+    
 });
 
 form.addEventListener("submit", (e) => {
